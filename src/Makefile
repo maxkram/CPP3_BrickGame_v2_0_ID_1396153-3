@@ -133,7 +133,6 @@ $(TEST_BIN): $(SNAKE_COV_OBJS)
 $(TETRIS_TEST_BIN): $(TETRIS_COV_OBJS)
 	@mkdir -p $(dir $@)
 	$(CXX) --coverage $(STD) -I. $^ -o $@ $(GTEST_LIBS)
-# Отчёт о покрытии (lcov + genhtml).
 gcov_report: test
 	@mkdir -p $(REPORT_DIR)
 	lcov --capture --directory $(COV_DIR) \

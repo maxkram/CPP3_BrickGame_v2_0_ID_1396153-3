@@ -244,6 +244,7 @@ gboolean GtkView::OnFocusOut(GtkWidget*, GdkEventFocus*, gpointer user_data) {
 
 void GtkView::OnWindowDestroy(GtkWidget*, gpointer user_data) {
   auto* view = static_cast<GtkView*>(user_data);
+  view->input_(Terminate, false);
   delete view;
 }
 
